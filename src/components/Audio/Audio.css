@@ -1,0 +1,17 @@
+.music-btn {
+  cursor: pointer;
+  border-radius: 50%;
+  border: 5px solid #e4f9fa;
+  position: fixed;
+  top: 60px;
+  right: 5px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+.music-btn img {
+  width: 60%;
+}
