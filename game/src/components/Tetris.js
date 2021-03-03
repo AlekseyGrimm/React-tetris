@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import { createStage, checkCollision } from '../gameHelpers';
 
 // Styled Components
@@ -17,8 +18,10 @@ const Tetris = () => {
   const [dropTime, setDropTime] = useState(null);
   const [gameOver, setGameOver] = useState(false);
 
-  const [player,  updatePlayerPos, resetPlayer] = usePlayer();
-  const [stage, setStage] = useStage(player);
+  const [player, updatePlayerPos, resetPlayer] = usePlayer();
+  const [stage, setStage] = useStage(player, resetPlayer);
+
+  console.log('re-render');
 
   const movePlayer = dir => {
     if (!checkCollision(player, stage, { x: dir, y: 0 })) {
@@ -27,6 +30,7 @@ const Tetris = () => {
   }
 
   const startGame = () => {
+    console.log("test")
     // Reset everything
     setStage(createStage());
     resetPlayer();
@@ -64,25 +68,23 @@ const Tetris = () => {
   }
 
   return (
-    <div>
-      <StyledTetrisWrapper role="button" tabIndex="0" onKeyDown={e => move(e)}>
-        <StyledTetris>
-          <Stage stage={stage} />
-          <aside>
-            {gameOver ? (
-              <Display gameOver={gameOver} text="Game Over" />
-            ) : (
-                <div>
-                  <Display text="Score" />
-                  <Display text="Rows" />
-                  <Display text="Level" />
-                </div>
-              )}
-            <StartButton callback={startGame} />
-          </aside>
-        </StyledTetris>
-      </StyledTetrisWrapper>
-    </div>
+    <StyledTetrisWrapper role="button" tabIndex="0" onKeyDown={e => move(e)}>
+      <StyledTetris>
+        <Stage stage={stage} />
+        <aside>
+          {gameOver ? (
+            <Display gameOver={gameOver} text="Game Over" />
+          ) : (
+            <div>
+              <Display text="Score" />
+              <Display text="Rows" />
+              <Display text="Level" />
+            </div>
+          )}
+          <StartButton callback={startGame} />
+        </aside>
+      </StyledTetris>
+    </StyledTetrisWrapper>
   );
 };
 
