@@ -1,1 +1,1 @@
-# React-tetris
+https://alekseygrimm.github.io/React-tetris
