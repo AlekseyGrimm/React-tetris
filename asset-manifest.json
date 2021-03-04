@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/React-tetris/static/css/main.5eeebb4b.chunk.css",
+    "main.js": "/React-tetris/static/js/main.ebd0984c.chunk.js",
+    "main.js.map": "/React-tetris/static/js/main.ebd0984c.chunk.js.map",
+    "runtime-main.js": "/React-tetris/static/js/runtime-main.663bfadd.js",
+    "runtime-main.js.map": "/React-tetris/static/js/runtime-main.663bfadd.js.map",
+    "static/js/2.9065130d.chunk.js": "/React-tetris/static/js/2.9065130d.chunk.js",
+    "static/js/2.9065130d.chunk.js.map": "/React-tetris/static/js/2.9065130d.chunk.js.map",
+    "index.html": "/React-tetris/index.html",
+    "static/css/main.5eeebb4b.chunk.css.map": "/React-tetris/static/css/main.5eeebb4b.chunk.css.map",
+    "static/js/2.9065130d.chunk.js.LICENSE.txt": "/React-tetris/static/js/2.9065130d.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/React-tetris/static/media/Pixel-LCD-7.63d9c151.woff",
+    "static/media/bg.ea97583b.png": "/React-tetris/static/media/bg.ea97583b.png",
+    "static/media/music.9d8dfb69.mp3": "/React-tetris/static/media/music.9d8dfb69.mp3",
+    "static/media/sound-off.b826b9b4.svg": "/React-tetris/static/media/sound-off.b826b9b4.svg",
+    "static/media/sound.b9ac0fb9.svg": "/React-tetris/static/media/sound.b9ac0fb9.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.663bfadd.js",
+    "static/js/2.9065130d.chunk.js",
+    "static/css/main.5eeebb4b.chunk.css",
+    "static/js/main.ebd0984c.chunk.js"
+  ]
+}
