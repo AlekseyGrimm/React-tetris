@@ -1,0 +1,20 @@
+.full {
+    background-color: #625b5b;
+    color: white;
+    display: flex;
+    cursor: pointer;
+    border-radius: 30%;
+    border: 5px solid #0f1010;
+    position: fixed;
+    top: 10px;
+    right: 5px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.score{
+    margin: 0;
+}
