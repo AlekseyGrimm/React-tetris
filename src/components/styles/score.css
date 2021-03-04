@@ -1,0 +1,10 @@
+.score{
+    height: -19px;
+    color: #ffffff;  
+    list-style: none;
+    text-align: center;
+    font-size: 25px;
+    display: flex;
+    flex-flow: column;
+    z-index: 100;
+}

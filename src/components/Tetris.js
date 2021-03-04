@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { createStage, checkCollision } from '../gameHelpers';
-import { StyledTetrisWrapper, StyledTetris} from './styles/StyledTetris';
+import { StyledTetrisWrapper, StyledTetris } from './styles/StyledTetris';
 import { FullScreen, useFullScreenHandle } from "react-full-screen";
 
 // Custom Hooks
@@ -16,6 +16,7 @@ import Display from './Display';
 import StartButton from './StartButton';
 import AudioControl from './Audio/AudioControl';
 import full from './styles/full.css'
+import score from './styles/score.css'
 
 const Tetris = () => {
   const [dropTime, setDropTime] = useState(null);
@@ -44,6 +45,30 @@ const Tetris = () => {
     }
   };
 
+  let bestScores = JSON.parse(localStorage.getItem("score")) || [];
+
+  function getLocalStore() {
+    bestScores.push(score);
+    bestScores.sort((a, b) => b - a);
+    bestScores.splice(10);
+    let uniqueArray = bestScores.filter(function (item, pos) {
+      return bestScores.indexOf(item) == pos;
+    });
+    localStorage.setItem("score", JSON.stringify(uniqueArray));
+  }
+
+
+  getLocalStore();
+  let scores = JSON.parse(localStorage.getItem("score"));
+  let i = 0;
+  let tenScore = scores.map((score) => {
+    return (
+      <div key={i++}>
+        <li>{score}</li>
+      </div>
+    );
+  });
+
   const startGame = () => {
     // Reset everything
     setStage(createStage());
@@ -68,7 +93,6 @@ const Tetris = () => {
     } else {
       // Game over!
       if (player.pos.y < 1) {
-        console.log('GAME OVER!!!');
         setGameOver(true);
         setDropTime(null);
       }
@@ -104,6 +128,7 @@ const Tetris = () => {
   };
 
   return (
+
     <FullScreen handle={handle}>
       <StyledTetrisWrapper
         role="button"
@@ -126,9 +151,8 @@ const Tetris = () => {
             <StartButton callback={startGame} />
             <div>
               <AudioControl />
-              <button className='full' onClick={handle.enter}>
-                FullScreen
-              </button>
+              <button className='full' onClick={handle.enter}>FullScreen</button>
+              <div className='score'>Best Scores:{tenScore}</div>
             </div>
           </aside>
         </StyledTetris>
